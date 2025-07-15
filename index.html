@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register/Login page</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div class="navb"><h2>Demo</h2><div class="navbs">
+<button class="reg" onclick="switchTo('register')">Register</button>
+<button class="reg" onclick="switchTo('login')">Login</button></div>
+</div>
+<div class="body">
+
+
+<div class="register"  id="regg">
+<h3 >Register Now</h3><br>
+<input class="ele" type="text" placeholder="User Name" required><br>
+<input  class="ele" type="email" placeholder="Email" required><br>
+<input  class="ele" type="password" placeholder="Password" ><br>
+<button class="btn1">Register</button>
+
+
+</div>
+    
+<div class="login hidden" id="logg">
+    <h3 >Login Now</h3><br>
+    <input class="ele" type="text" placeholder="User Name" required><br>
+    <input  class="ele" type="password" placeholder="Password" ><br>
+  <button class="btn1">Login</button>
+
+</div>
+
+</div>
+<script > function switchTo(target) {
+    const login = document.getElementById('logg');
+    const register = document.getElementById('regg');
+
+    const currentBox = target === 'register' ? login : register;
+    const nextBox = target === 'register' ? register : login;
+
+    currentBox.classList.add('animate-shrink-rotate');
+
+    setTimeout(() => {
+      currentBox.classList.add('hidden');
+      currentBox.classList.remove('animate-shrink-rotate');
+      nextBox.classList.remove('hidden');
+    }, 600);
+}</script>
+</body>
+</html>
